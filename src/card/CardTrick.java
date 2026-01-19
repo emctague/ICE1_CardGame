@@ -16,6 +16,7 @@ import java.util.function.Function;
  * Modified: 2025-01-19 by Ethan McTague (991573216):
  *  - Model hand of random cards
  *  - Prompt for new card and check if it's in the hand.
+ *  - Create a lucky card (committed from GH web editor)
  */
 public class CardTrick {
     
@@ -32,6 +33,11 @@ public class CardTrick {
         }
     
         Scanner scanner = new Scanner(System.in);
+
+        // Create a lucky card.
+        Card luckyCard = new Card();
+        luckyCard.setValue(1);
+        luckyCard.setSuit(Card.SUITS[0]);
         
         // Prompt for a card.
         System.out.println("Pick a card, any card!");
@@ -46,7 +52,7 @@ public class CardTrick {
         
         if (hasMagic) System.out.println("Your card is in the magic hand!");
         else System.out.println("Your card isn't in the magic hand :(");
-     
+
         
         //insert code to ask the user for Card value and suit, create their card
         // and search magicHand here
