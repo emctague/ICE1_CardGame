@@ -9,6 +9,8 @@ package card;
  * and then asks the user to pick a card and searches the array of cards
  * for the match to the user's card. To be used as starting code in ICE 1
  * @author srinivsi
+ * Modified: 2025-01-19 by Ethan McTague (991573216):
+ *  - Model hand of random cards
  */
 public class CardTrick {
     
@@ -19,8 +21,14 @@ public class CardTrick {
         for (int i=0; i<magicHand.length; i++)
         {
             Card c = new Card();
-            //c.setValue(insert call to random number generator here)
-            //c.setSuit(Card.SUITS[insert call to random number between 0-3 here])
+            c.setValue((int)(Math.random() * 13 + 1));
+            c.setSuit(Card.SUITS[(int)(Math.random() * Card.SUITS.length)]);
+            magicHand[i] = c;
+        }
+
+        // Temp: Prints the hand.
+        for (var card : magicHand) {
+            System.out.println(card.getValue() + ", " + card.getSuit());
         }
         
         //insert code to ask the user for Card value and suit, create their card
